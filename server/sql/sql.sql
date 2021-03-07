@@ -1,16 +1,33 @@
-CREATE TABLE `projects_managment`.`projects` (
+CREATE SCHEMA `vacation-app` ;
+
+
+
+CREATE TABLE `vacation-app`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `projectName` VARCHAR(250) NOT NULL,
-  `clientFullName` VARCHAR(45) NOT NULL,
-  `clientPhone` VARCHAR(45) NULL,
-  `location` VARCHAR(45) NULL,
-  `quotation` INT NULL DEFAULT 0,
-  `paid` INT NULL DEFAULT 0,
-  `unPaid` INT NULL DEFAULT 0,
-  `haregem` INT NULL DEFAULT 0,
-  `agreement` VARCHAR(45) NULL,
-  `createdAt` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `userName` VARCHAR(45) NOT NULL,
+  `firstName` VARCHAR(45) NOT NULL,
+  `lastName` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `role` INT NOT NULL,
   PRIMARY KEY (`id`));
 
 
+
+CREATE TABLE `vacation-app`.`vacation` (
+  `id` INT NOT NULL,
+  `description` VARCHAR(500) NOT NULL,
+  `destination` VARCHAR(45) NOT NULL,
+  `img` VARCHAR(45) NOT NULL,
+  `startAt` DATETIME NOT NULL,
+  `endAt` DATETIME NOT NULL,
+  `price` INT NOT NULL,
+  `role` ENUM('Admin', 'SuperUser') DEFAULT 'SuperUser', 
+
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `vacation-app`.`followers` (
+  `id` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `vacationId` INT NOT NULL,
+  PRIMARY KEY (`id`));
