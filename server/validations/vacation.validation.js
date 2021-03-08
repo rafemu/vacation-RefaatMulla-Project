@@ -9,7 +9,6 @@ const createVacationSchema = Joi.object().keys({
 
 const validationsObj = {
   createVacation: (req, res, next) => {
-    console.log("validationsObj", req.body);
     const { error } = createVacationSchema.validate(req.body);
     if (error) {
       console.log(error.details);

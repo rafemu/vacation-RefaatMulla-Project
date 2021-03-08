@@ -404,3 +404,96 @@
 {"message":"Server started!","level":"info","timestamp":"2021-03-07T19:58:34.322Z"}
 {"message":"Server started!","level":"info","timestamp":"2021-03-07T19:58:44.800Z"}
 {"message":"Server started!","level":"info","timestamp":"2021-03-07T19:58:58.445Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:10:29.633Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:11:07.571Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:32:23.261Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:33:17.900Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:33:39.802Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:34:48.689Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:36:16.255Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:36:36.746Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:37:27.945Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:40:06.301Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:41:39.827Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:41:46.177Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:42:21.043Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:42:55.134Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:43:06.147Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:43:15.375Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:43:37.123Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:47:41.868Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:47:48.512Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:48:00.029Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:48:20.560Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:49:01.170Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:50:49.171Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T21:53:29.787Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:18:46.560Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:19:35.330Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:20:59.721Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:21:04.580Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:21:11.282Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:21:19.269Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:22:04.302Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:22:54.843Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:23:30.807Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:23:55.972Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:25:01.803Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:25:15.576Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:27:49.167Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:28:14.301Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:39:21.286Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:39:45.832Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:40:38.524Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:42:59.180Z"}
+{"message":"Sun Mar 07 2021 22:42:59 GMT+0000 - create vacation Failed -  ","level":"error","timestamp":"2021-03-07T22:43:03.726Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:43:18.491Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:43:46.386Z"}
+{"message":"Sun Mar 07 2021 22:43:46 GMT+0000 - create vacation Failed -  ","level":"error","timestamp":"2021-03-07T22:43:51.270Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:44:35.269Z"}
+{"message":"Sun Mar 07 2021 22:44:35 GMT+0000 - create vacation Failed - No files ! ","level":"error","timestamp":"2021-03-07T22:44:36.830Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:44:50.660Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-07T22:45:01.445Z"}
+{"message":"Sun Mar 07 2021 22:45:01 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-07T22:45:03.843Z"}
+{"message":"tring to login - userName: Aya - Sun Mar 07 2021 22:45:01 GMT+0000","level":"info","timestamp":"2021-03-08T08:44:04.284Z"}
+{"message":"currentTime: Sun Mar 07 2021 22:45:01 GMT+0000 ###### Logged User :aya  Role : Admin","level":"info","timestamp":"2021-03-08T08:44:04.418Z"}
+{"message":"Sun Mar 07 2021 22:45:01 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-08T08:44:55.744Z"}
+{"message":"new vacation from - userName: aya - Sun Mar 07 2021 22:45:01 GMT+0000","level":"info","timestamp":"2021-03-08T08:45:54.318Z"}
+{"message":"new vacation from - userName: aya - Sun Mar 07 2021 22:45:01 GMT+0000","level":"info","timestamp":"2021-03-08T08:46:47.165Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T08:48:42.053Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T08:49:44.002Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T08:50:13.187Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T09:50:49.083Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T09:52:10.322Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T09:52:23.735Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T09:52:46.495Z"}
+{"message":"new vacation from - userName: aya - Mon Mar 08 2021 09:52:46 GMT+0000","level":"info","timestamp":"2021-03-08T09:58:36.587Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:02:40.684Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:03:16.053Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:03:16.624Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:03:40.246Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:04:06.693Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:06:11.105Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:06:28.449Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:06:55.365Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:07:04.578Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:07:27.271Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:07:59.100Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:08:35.362Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:09:49.416Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:09:54.560Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:10:02.839Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:10:34.765Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:11:15.317Z"}
+{"message":"new vacation from - userName: aya - Mon Mar 08 2021 10:11:15 GMT+0000","level":"info","timestamp":"2021-03-08T10:12:24.873Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:12:45.942Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:13:11.188Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:13:32.191Z"}
+{"message":"new vacation from - userName: aya - Mon Mar 08 2021 10:13:32 GMT+0000","level":"info","timestamp":"2021-03-08T10:13:34.677Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:50:31.294Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:52:53.496Z"}
+{"message":"new vacation from - userName: aya - Mon Mar 08 2021 10:52:53 GMT+0000","level":"info","timestamp":"2021-03-08T10:55:35.844Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T10:55:40.568Z"}
+{"message":"new vacation from - userName: aya - Mon Mar 08 2021 10:55:40 GMT+0000","level":"info","timestamp":"2021-03-08T10:55:42.194Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T11:09:54.610Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-03-08T11:11:55.442Z"}

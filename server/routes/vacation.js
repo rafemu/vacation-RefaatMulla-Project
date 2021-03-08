@@ -9,7 +9,6 @@ const {
 } = require("../controllers/vacation");
 const getValidationFunction = require("./../validations/vacation.validation");
 const moment = require("moment");
-
 const logger = require("../logger");
 
 router.use(verifyToken);
@@ -18,41 +17,23 @@ const currentTime = moment().utc();
 router.post(
   `/createVacation`,
   isAdmin,
-  (req, res, next) => {
-    const { destination, description, from, to, price } = req.body;
-    console.log(req.body);
-    if (!destination) return res.send("error");
-
-    return next();
-  },
-
-  upload.single("file"),
-  // getValidationFunction("createVacation"),
+  upload,
+  getValidationFunction("createVacation"),
   async (req, res, next) => {
-    console.log(req.body);
-    // upload(req, res, function (imageUploadErr) {
-    //   console.log("upload", req.body);
-    //   console.log("upload", imageUploadErr);
-    // });
-    // if (!req.file) {
-    //   res.status(500);
-    //   return next(err);
-    // }
     try {
-      // const result = await createVacation(req.body);
-      // if (!result) throw new Error("something went wrong");
-      // const insertImages = await insertPhotoToDB(req.file.path, result);
-      // logger.info(
-      //   `new vacation from - userName: ${req.user.userName} - ${currentTime}`
-      // );
-      // res.json({
-      //   fileUrl: "http://localhost:3000/images/" + req.file.filename,
-      //   result,
-      // });
-    } catch (error) {
-      logger.error(
-        `${currentTime} - create vacation Failed - ${error.message} `
+      if (!req.file) res.send("No files !");
+      const result = await createVacation(req.body);
+      if (!result) throw new Error("some thing went wrong");
+      const insertImages = await insertPhotoToDB(req.file.path, result);
+      logger.info(
+        `new vacation from - userName: ${req.user.userName} - ${currentTime}`
       );
+      res.json({
+        fileUrl: "http://localhost:3000/images/" + req.file.filename,
+        result,
+      });
+    } catch (ex) {
+      logger.error(`${currentTime} - create vacation Failed - ${ex.message} `);
       return next({ message: ex.message, status: 400 });
     }
   }
@@ -60,7 +41,6 @@ router.post(
 
 router.post("/follow", async (req, res, next) => {
   const { userId, vacationId } = req.body;
-  console.log(req.body);
   try {
     if (!userId || !vacationId) res.status(400).send("error");
     const result = await followVacation(userId, vacationId);
@@ -72,5 +52,22 @@ router.post("/follow", async (req, res, next) => {
     return next({ message: ex.message, status: 400 });
   }
 });
+
+// router.delete("/element/:id", function(req, res) {
+//   Image.findByIdAndRemove(req.params.id, function(err) {
+//     if(err) {
+//       //Error Handling
+//     } else {
+
+// fs.unlink(path+req.file.filename, (err) => {
+//         if (err) {
+//             console.log("failed to delete local image:"+err);
+//         } else {
+//             console.log('successfully deleted local image');
+//         }
+// });
+//     }
+//   });
+// });
 
 module.exports = router;

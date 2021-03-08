@@ -6,7 +6,7 @@ const api = express();
 const logger = require("./logger");
 const upload = require("./helper/uploader");
 const multer = require("multer");
-const forms = multer();
+//const forms = multer();
 
 //routes
 const login = require("./routes/login");
@@ -42,6 +42,7 @@ validateEnvParams();
 //// End Validate Env Params
 
 api.use(cors());
+// api.use(fileUpload());
 
 api.use((req, res, next) => {
   var allowedOrigins = ["http://localhost:4000"];
@@ -61,7 +62,7 @@ api.use((req, res, next) => {
 
 // parse requests of content-type - application/x-www-form-urlencoded
 api.use(bodyParser.urlencoded({ extended: true }));
-api.use(forms.array());
+//api.use(forms.array());
 
 api.use(bodyParser.json());
 ///check Api connection

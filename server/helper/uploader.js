@@ -1,27 +1,46 @@
 const multer = require("multer");
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    // console.log(req.body);
-    // const { destination, description, from, to, price } = req.body;
+const path = require("path");
 
-    // if (!destination || !description || !from || !to || !price)
-    //   throw new Error("error");
-    cb(null, "./images");
-  },
-  filename: (req, file, cb) => {
-    var filetype = "";
-    if (file.mimetype === "image/gif") {
-      filetype = "gif";
-    }
-    if (file.mimetype === "image/png") {
-      filetype = "png";
-    }
-    if (file.mimetype === "image/jpeg") {
-      filetype = "jpg";
-    }
-    cb(null, "image-" + Date.now() + "." + filetype);
+const storage = multer.diskStorage({
+  destination: "./images",
+  filename: function (_req, file, cb) {
+    cb(
+      null,
+      _req.body.destination + "-" + Date.now() + path.extname(file.originalname)
+    );
   },
 });
-const upload = multer({ storage: storage });
+var upload = multer({
+  storage: storage,
+  limits: {
+    fields: 5,
+    fieldNameSize: 50, // TODO: Check if this size is enough
+    fieldSize: 20000, //TODO: Check if this size is enough
+    // TODO: Change this line after compression
+    fileSize: 15000000, // 150 KB for a 1080x1080 JPG 90
+  },
+  fileFilter: async function (_req, file, cb) {
+    const { destination, description, from, to, price } = _req.body;
+    if (!destination || !description || !from || !to || !price) {
+      cb("Error: destination not found");
+    } else {
+      checkFileType(file, cb);
+    }
+  },
+}).single("file");
+function checkFileType(file, cb) {
+  // Allowed ext
+  const filetypes = /jpeg|jpg|png|gif/;
+  // Check ext
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  // Check mime
+  const mimetype = filetypes.test(file.mimetype);
+
+  if (mimetype && extname) {
+    return cb(null, true);
+  } else {
+    cb("Error: Images Only!");
+  }
+}
 
 module.exports = upload;

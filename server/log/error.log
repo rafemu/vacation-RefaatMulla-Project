@@ -1,3 +1,8 @@
 {"message":"Fri Mar 05 2021 09:00:33 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-05T09:00:33.900Z"}
 {"message":"Sun Mar 07 2021 11:19:41 GMT+0000 - create vacation Failed - result is not defined ","level":"error","timestamp":"2021-03-07T11:19:43.879Z"}
 {"message":"Sun Mar 07 2021 11:21:26 GMT+0000 - create vacation Failed - result is not defined ","level":"error","timestamp":"2021-03-07T11:21:29.480Z"}
+{"message":"Sun Mar 07 2021 22:42:59 GMT+0000 - create vacation Failed -  ","level":"error","timestamp":"2021-03-07T22:43:03.726Z"}
+{"message":"Sun Mar 07 2021 22:43:46 GMT+0000 - create vacation Failed -  ","level":"error","timestamp":"2021-03-07T22:43:51.270Z"}
+{"message":"Sun Mar 07 2021 22:44:35 GMT+0000 - create vacation Failed - No files ! ","level":"error","timestamp":"2021-03-07T22:44:36.830Z"}
+{"message":"Sun Mar 07 2021 22:45:01 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-07T22:45:03.843Z"}
+{"message":"Sun Mar 07 2021 22:45:01 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-08T08:44:55.744Z"}
