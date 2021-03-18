@@ -6,3 +6,85 @@
 {"message":"Sun Mar 07 2021 22:44:35 GMT+0000 - create vacation Failed - No files ! ","level":"error","timestamp":"2021-03-07T22:44:36.830Z"}
 {"message":"Sun Mar 07 2021 22:45:01 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-07T22:45:03.843Z"}
 {"message":"Sun Mar 07 2021 22:45:01 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-08T08:44:55.744Z"}
+{"message":"Mon Mar 08 2021 15:19:03 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:19:19.688Z"}
+{"message":"Mon Mar 08 2021 15:20:24 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:20:28.469Z"}
+{"message":"Mon Mar 08 2021 15:20:54 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:20:55.979Z"}
+{"message":"Mon Mar 08 2021 15:25:51 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:26:00.954Z"}
+{"message":"Mon Mar 08 2021 15:26:58 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:27:00.046Z"}
+{"message":"Mon Mar 08 2021 15:27:38 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:27:40.558Z"}
+{"message":"Mon Mar 08 2021 15:27:47 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:27:49.667Z"}
+{"message":"Mon Mar 08 2021 15:28:09 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:28:27.872Z"}
+{"message":"Mon Mar 08 2021 15:28:57 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:28:57.892Z"}
+{"message":"Mon Mar 08 2021 15:29:23 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T15:29:24.512Z"}
+{"message":"Mon Mar 08 2021 15:29:23 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:43:27.801Z"}
+{"message":"Mon Mar 08 2021 21:43:54 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:43:57.624Z"}
+{"message":"Mon Mar 08 2021 21:44:37 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:44:41.943Z"}
+{"message":"Mon Mar 08 2021 21:47:08 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:47:42.219Z"}
+{"message":"Mon Mar 08 2021 21:49:31 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:49:36.506Z"}
+{"message":"Mon Mar 08 2021 21:50:00 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:50:02.052Z"}
+{"message":"Mon Mar 08 2021 21:50:28 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:50:30.577Z"}
+{"message":"Mon Mar 08 2021 21:52:18 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:52:22.546Z"}
+{"message":"Mon Mar 08 2021 21:53:45 GMT+0000 - edit vacation Failed - some thing went wrong ","level":"error","timestamp":"2021-03-08T21:53:48.743Z"}
+{"message":"Mon Mar 08 2021 21:54:51 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:54:56.338Z"}
+{"message":"Mon Mar 08 2021 21:55:41 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T21:55:45.199Z"}
+{"message":"Mon Mar 08 2021 21:59:55 GMT+0000 - edit vacation Failed - Unknown column '100' in 'field list' ","level":"error","timestamp":"2021-03-08T21:59:59.105Z"}
+{"message":"Mon Mar 08 2021 22:00:21 GMT+0000 - edit vacation Failed - Unknown column '100' in 'field list' ","level":"error","timestamp":"2021-03-08T22:00:23.255Z"}
+{"message":"Mon Mar 08 2021 22:01:08 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T22:01:12.230Z"}
+{"message":"Mon Mar 08 2021 22:01:22 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T22:01:23.588Z"}
+{"message":"Mon Mar 08 2021 22:01:42 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T22:01:43.853Z"}
+{"message":"Mon Mar 08 2021 22:02:05 GMT+0000 - edit vacation Failed - some thing went wrong ","level":"error","timestamp":"2021-03-08T22:02:07.378Z"}
+{"message":"Mon Mar 08 2021 22:02:28 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T22:02:31.769Z"}
+{"message":"Mon Mar 08 2021 22:03:57 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T22:04:01.122Z"}
+{"message":"Mon Mar 08 2021 22:05:04 GMT+0000 - edit vacation Failed - Incorrect arguments to mysqld_stmt_execute ","level":"error","timestamp":"2021-03-08T22:05:07.339Z"}
+{"message":"Mon Mar 08 2021 22:05:28 GMT+0000 - edit vacation Failed - some thing went wrong ","level":"error","timestamp":"2021-03-08T22:05:29.854Z"}
+{"message":"Mon Mar 08 2021 22:14:18 GMT+0000 - edit vacation Failed - some thing went wrong ","level":"error","timestamp":"2021-03-08T22:14:59.112Z"}
+{"message":"Mon Mar 08 2021 22:16:29 GMT+0000 - edit vacation Failed - Cannot add or update a child row: a foreign key constraint fails (`vacation-app`.`images`, CONSTRAINT `imgVacation` FOREIGN KEY (`vacationId`) REFERENCES `vacation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ","level":"error","timestamp":"2021-03-08T22:16:31.371Z"}
+{"message":"Mon Mar 08 2021 22:16:29 GMT+0000 - edit vacation Failed - Cannot add or update a child row: a foreign key constraint fails (`vacation-app`.`images`, CONSTRAINT `imgVacation` FOREIGN KEY (`vacationId`) REFERENCES `vacation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ","level":"error","timestamp":"2021-03-08T22:17:28.939Z"}
+{"message":"Mon Mar 08 2021 22:16:29 GMT+0000 - edit vacation Failed - some thing went wrong ","level":"error","timestamp":"2021-03-08T22:18:08.281Z"}
+{"message":"Mon Mar 08 2021 22:18:42 GMT+0000 - edit vacation Failed - Cannot add or update a child row: a foreign key constraint fails (`vacation-app`.`images`, CONSTRAINT `imgVacation` FOREIGN KEY (`vacationId`) REFERENCES `vacation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ","level":"error","timestamp":"2021-03-08T22:19:28.136Z"}
+{"message":"Wed Mar 10 2021 09:02:53 GMT+0000 - get vacations Failed - Cannot read property 'userName' of undefined ","level":"error","timestamp":"2021-03-10T09:03:01.816Z"}
+{"message":"Wed Mar 10 2021 09:02:53 GMT+0000 - get vacations Failed - Cannot read property 'userName' of undefined ","level":"error","timestamp":"2021-03-10T09:03:30.925Z"}
+{"message":"Wed Mar 10 2021 13:14:30 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T12:36:50.801Z"}
+{"message":"Wed Mar 10 2021 13:14:30 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T12:37:28.790Z"}
+{"message":"Wed Mar 10 2021 13:14:30 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T12:37:44.691Z"}
+{"message":"Wed Mar 10 2021 13:14:30 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T12:38:08.566Z"}
+{"message":"Wed Mar 10 2021 13:14:30 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T12:38:11.772Z"}
+{"message":"Wed Mar 10 2021 13:14:30 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T12:38:56.433Z"}
+{"message":"Thu Mar 11 2021 15:30:32 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T15:31:49.695Z"}
+{"message":"Thu Mar 11 2021 15:33:07 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T15:33:14.138Z"}
+{"message":"Thu Mar 11 2021 15:33:07 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T15:33:17.825Z"}
+{"message":"Thu Mar 11 2021 15:33:07 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-11T19:12:08.343Z"}
+{"message":"Thu Mar 11 2021 19:29:25 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T19:29:38.597Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T19:42:03.001Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T19:44:04.297Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T19:45:20.606Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T19:45:27.561Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - Login Failed - Invalid Password!\" ","level":"error","timestamp":"2021-03-11T19:58:33.070Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:24.409Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:26.423Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:26.425Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:26.430Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:27.222Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:47.217Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:47.220Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:47.232Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:47.233Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:47.243Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.720Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.734Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.734Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.746Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.763Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.774Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.774Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.778Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:53.790Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:53:54.284Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:54:07.969Z"}
+{"message":"Thu Mar 11 2021 19:41:54 GMT+0000 - Login Failed - Too many connections ","level":"error","timestamp":"2021-03-12T10:54:11.594Z"}
+{"message":"Sun Mar 14 2021 10:36:01 GMT+0000 - Login Failed - \"exp\" should be a number of seconds ","level":"error","timestamp":"2021-03-14T10:36:14.403Z"}
+{"message":"Tue Mar 16 2021 09:15:11 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-03-16T10:01:23.283Z"}
+{"message":"Wed Mar 17 2021 22:05:14 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-17T22:05:26.947Z"}
+{"message":"Wed Mar 17 2021 22:08:09 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-17T22:08:22.443Z"}
+{"message":"Thu Mar 18 2021 09:59:12 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-18T09:59:25.560Z"}
+{"message":"Thu Mar 18 2021 09:59:57 GMT+0000 - create vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-18T10:00:13.363Z"}

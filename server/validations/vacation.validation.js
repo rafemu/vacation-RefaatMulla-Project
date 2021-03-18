@@ -2,9 +2,10 @@ const Joi = require("@hapi/joi");
 const createVacationSchema = Joi.object().keys({
   destination: Joi.string().min(1).max(250).required(),
   description: Joi.string().required(),
-  from: Joi.string().required(),
-  to: Joi.string().required(),
+  startAt: Joi.string().required(),
+  endAt: Joi.string().required(),
   price: Joi.number().required(),
+  file: Joi.optional(),
 });
 
 const validationsObj = {

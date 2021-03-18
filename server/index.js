@@ -4,9 +4,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const api = express();
 const logger = require("./logger");
-const upload = require("./helper/uploader");
-const multer = require("multer");
-//const forms = multer();
 
 //routes
 const login = require("./routes/login");
@@ -44,24 +41,26 @@ validateEnvParams();
 api.use(cors());
 // api.use(fileUpload());
 
-api.use((req, res, next) => {
-  var allowedOrigins = ["http://localhost:4000"];
-  var origin = req.headers.origin;
-  if (allowedOrigins.indexOf(origin) > -1) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "x-access-token, Content-Type, Accept"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  next();
-});
+api.use(express.static("images"));
+
+// api.use((req, res, next) => {
+//   var allowedOrigins = ["http://localhost:3000", "*"];
+//   var origin = req.headers.origin;
+//   if (allowedOrigins.indexOf(origin) > -1) {
+//     res.setHeader("Access-Control-Allow-Origin", origin);
+//   }
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "x-access-token, Content-Type, Accept"
+//   );
+//   res.setHeader("Access-Control-Allow-Methods", "*");
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   res.setHeader("Access-Control-Allow-Headers", "*");
+//   next();
+// });
 
 // parse requests of content-type - application/x-www-form-urlencoded
-api.use(bodyParser.urlencoded({ extended: true }));
+api.use(bodyParser.urlencoded({ extended: false }));
 //api.use(forms.array());
 
 api.use(bodyParser.json());
@@ -73,6 +72,12 @@ api.get("/health-check", (req, res, next) => {
 
 api.use("/auth", login);
 api.use("/vacation", vacation);
+
+api.use((error, req, res, next) => {
+  console.log(error);
+  const status = error.status || 500;
+  res.status(status).json(error.message);
+});
 
 api.listen(process.env.PORT, () => {
   console.log(`Server is listening to Port ${process.env.PORT}`);

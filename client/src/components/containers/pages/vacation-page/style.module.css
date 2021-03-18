@@ -1,0 +1,31 @@
+.vacationCardView {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.Card {
+  background: tomato !important;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+.btnAddVacation {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 10px auto !important;
+}
+
+.welcomeTitle {
+  margin: 10px auto !important;
+}

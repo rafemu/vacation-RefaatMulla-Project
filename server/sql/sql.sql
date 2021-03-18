@@ -31,3 +31,9 @@ CREATE TABLE `vacation-app`.`followers` (
   `userId` INT NOT NULL,
   `vacationId` INT NOT NULL,
   PRIMARY KEY (`id`));
+
+CREATE TABLE `vacation-app`.`images` (
+  `idimages` INT NOT NULL AUTO_INCREMENT,
+  `imagePath` VARCHAR(250) NULL,
+  `vacationId` VARCHAR(45) NULL,
+  PRIMARY KEY (`idimages`));

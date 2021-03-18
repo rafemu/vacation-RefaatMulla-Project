@@ -6,13 +6,32 @@ const {
   createVacation,
   insertPhotoToDB,
   followVacation,
+  editVacation,
+  getVacations,
 } = require("../controllers/vacation");
 const getValidationFunction = require("./../validations/vacation.validation");
 const moment = require("moment");
 const logger = require("../logger");
 
-router.use(verifyToken);
 const currentTime = moment().utc();
+
+router.use(verifyToken);
+
+router.get("/", async (req, res, nexr) => {
+  try {
+    const result = await getVacations();
+    if (!result) throw new Error("some thing went wrong");
+    logger.info(
+      `get vacation from server done by - userName: ${req.user.userName} - ${currentTime}`
+    );
+    res.json({
+      result,
+    });
+  } catch (ex) {
+    logger.error(`${currentTime} - get vacations Failed - ${ex.message} `);
+    return next({ message: ex.message, status: 400 });
+  }
+});
 
 router.post(
   `/createVacation`,
@@ -34,6 +53,31 @@ router.post(
       });
     } catch (ex) {
       logger.error(`${currentTime} - create vacation Failed - ${ex.message} `);
+      return next({ message: ex.message, status: 400 });
+    }
+  }
+);
+
+router.put(
+  `/:vacationId`,
+  isAdmin,
+  upload,
+  getValidationFunction("createVacation"),
+  async (req, res, next) => {
+    try {
+      if (!req.file) res.send("No files !");
+      const { vacationId } = req.params;
+      const result = await editVacation(req.body, vacationId);
+      if (!result) throw new Error("some thing went wrong");
+      const insertImages = await insertPhotoToDB(req.file.path, result);
+      logger.info(
+        ` vacation has been updated  By - userName: ${req.user.userName} - ${currentTime}`
+      );
+      res.json({
+        result,
+      });
+    } catch (ex) {
+      logger.error(`${currentTime} - edit vacation Failed - ${ex.message} `);
       return next({ message: ex.message, status: 400 });
     }
   }

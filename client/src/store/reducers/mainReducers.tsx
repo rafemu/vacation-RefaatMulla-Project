@@ -1,55 +1,55 @@
+import { IVacation } from "../../interfaces";
 import ACTIONS from "../actions";
+import { getToken, getPayload } from "../services/token.service";
 
 export interface IState {
-  projects: Array<any>;
-  project: any;
-  projectTimeSheet: Array<any>;
-  employees: Array<any>;
+  vacations: Array<IVacation>;
+  message: string;
+  currentUser: any;
+  // userName: string | null;
+  // users: Array<any>;
+  // account: any;
 }
 
+const user = getToken();
 const initialState: IState = {
-  projects: [],
-  project: null,
-  projectTimeSheet: [],
-  employees: [],
+  vacations: [],
+  message: "",
+  currentUser: user
+    ? { isLoggedIn: true, user }
+    : { isLoggedIn: false, user: {} },
+  // users: [],
+  // userName: null,
+  // account: null,
 };
+
+console.log(initialState);
 function mainReducer(state = initialState, action: any) {
   switch (action.type) {
-    case ACTIONS.PROJECTS.GET_PROJECTS_DONE: {
-      return { ...state, projects: [...action.payload] };
+    case ACTIONS.VACATIONS.GET_VACATION_SUCCESS: {
+      return { ...state, vacations: [...action.payload] };
     }
+    case ACTIONS.MESSAGE.SET_MESSAGE:
+      return { ...state, message: action.payload };
 
-    case ACTIONS.PROJECTS.GET_PROJECT_DONE: {
-      return { ...state, project: action.payload };
+    case ACTIONS.MESSAGE.CLEAR_MESSAGE:
+      return { ...state, message: "" };
+
+    case ACTIONS.LOGIN.LOGIN_SUCCESS: {
+      // alert(action.payload.message);
+      // console.log(action.payload.message);
+
+      return { ...state, isLoggedIn: true, currentUser: action.payload };
     }
+    // case ACTIONS.LOGIN.LOGIN_FAIL: {
+    //   return {
+    //     ...state,
+    //   };
+    // }
 
-    case ACTIONS.PROJECTS.GET_PROJECT_WITH_TIMESHEET_DONE: {
-      return { ...state, projectTimeSheet: [...action.payload] };
+    case ACTIONS.LOGOUT.LOGOUT_SUCCESS: {
+      return { ...state, isLoggedIn: false, currentUser: {} };
     }
-
-    case ACTIONS.EMPLOYEES.GET_EMPLOYEES_DONE: {
-      return { ...state, employees: [...action.payload] };
-    }
-
-    // case ACTIONS.REGISTER.USER_REGISTRATION_FAILED: {
-    //     alert(action.payload)
-    //     return state;
-    // }
-
-    // case ACTIONS.REGISTER.USER_REGISTRATION_PENDING: {
-
-    //     return state;
-    // }
-
-    // case ACTIONS.ACCOUNTS.GET_ACCOUNTS_SUCCESS: {
-    //     return { ...state, accounts: [...action.payload] };
-    // }
-    // case ACTIONS.USERS.GET_USERS_SUCCESS: {
-    //     return { ...state, users: [...action.payload] };
-    // }
-    // case ACTIONS.ACCOUNTS.GET_ACCOUNT_SUCCESS: {
-    //     return { ...state, account: action.payload };
-    // }
 
     default: {
       return state;

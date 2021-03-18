@@ -20,9 +20,9 @@ var upload = multer({
     fileSize: 15000000, // 150 KB for a 1080x1080 JPG 90
   },
   fileFilter: async function (_req, file, cb) {
-    const { destination, description, from, to, price } = _req.body;
-    if (!destination || !description || !from || !to || !price) {
-      cb("Error: destination not found");
+    const { destination, description, startAt, endAt, price } = _req.body;
+    if (!destination || !description || !startAt || !endAt || !price) {
+      cb(`Error:  not found`);
     } else {
       checkFileType(file, cb);
     }

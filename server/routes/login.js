@@ -37,13 +37,19 @@ router.post(
 
         return res.json({
           message: `Hello ${result.firstName} , login success`,
-          token,
+          id: result.id,
+          username: result.firstName,
+          role: result.role,
+          accessToken: token,
         });
       }
       //return res.json({ message: `Hello ${result.firstName} , login success` });
     } catch (error) {
       logger.error(`${currentTime} - Login Failed - ${error.message} `);
-      return res.json({ message: `Login Failed - ${error.message}` });
+      return res.json({
+        message: `Login Failed - ${error.message}`,
+        status: 500,
+      });
     }
   }
 );

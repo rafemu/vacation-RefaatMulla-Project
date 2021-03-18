@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+.appBar {
+  background-color: #f44336 !important;
+}
+
+.loginDiv {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30vh;
+  justify-content: center;
+  background: url("./../../../../asstes/images/loginPageImage.jpg") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+.cardDiv {
+  padding: 50px;
+}
+
+.textField {
+  padding-top: 30px;
+}
+
+.loginHeader {
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+}
+.loginCard {
+  padding: 50px;
+}

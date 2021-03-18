@@ -5,6 +5,7 @@ const { isUserRegistered } = require("../controllers/users");
 async function signJWT(data) {
   return new Promise((resolve, reject) => {
     jwt.sign(
+      //{ exp: Date.now() / 1000 + 60, data },
       { exp: Math.floor(Date.now() / 1000) + 60 * 60 * 8, data },
       authSec.secret,
       function (err, token) {
@@ -19,10 +20,10 @@ async function signJWT(data) {
 }
 
 async function verifyToken(req, res, next) {
-  if (!req.headers.authorization) {
+  if (!req.headers["x-access-token"]) {
     return res.status(401).json({ message: "No authorization header found" });
   }
-  const token = req.cookie || req.headers.authorization.split(" ")[1];
+  const token = req.cookie || req.headers["x-access-token"];
   if (!token) {
     return res.status(403).json({ message: "no token found" });
   }
