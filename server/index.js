@@ -3,12 +3,29 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const api = express();
+api.use(express.json());
+api.use(cors());
+
+// const server = require("http").createServer(api, {
+//   cors: {
+//     origin: "*",
+//   },
+// });
+//const io = require("socket.io")();
+const httpServer = require("http").createServer(api);
+const io = require("socket.io")(httpServer, {
+  cors: {
+    origin: "*",
+  },
+});
+
+require("./socket/streams")(io);
+
 const logger = require("./logger");
 
 //routes
 const login = require("./routes/login");
 const vacation = require("./routes/vacation");
-const { required } = require("@hapi/joi");
 
 logger.info("Server started!");
 
@@ -38,7 +55,6 @@ function validateEnvParams() {
 validateEnvParams();
 //// End Validate Env Params
 
-api.use(cors());
 // api.use(fileUpload());
 
 api.use(express.static("images"));
@@ -79,6 +95,6 @@ api.use((error, req, res, next) => {
   res.status(status).json(error.message);
 });
 
-api.listen(process.env.PORT, () => {
+httpServer.listen(process.env.PORT, () => {
   console.log(`Server is listening to Port ${process.env.PORT}`);
 });

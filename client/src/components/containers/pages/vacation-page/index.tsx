@@ -18,6 +18,11 @@ import AddIcon from "@material-ui/icons/Add";
 import { getIsAdmin } from "../../../../store/services/auth.service";
 import { ModalForm } from "../../../ui-component/vacation-modal";
 import { addNewVacationsService } from "../../../../store/services/vacations.service";
+import { IO_CONNECTION } from "../../../../config";
+
+import { io } from "socket.io-client";
+
+let socket;
 const MySwal = withReactContent(Swal);
 const showFormModal = (values: any) => {
   return new Promise((resolve, reject) => {
@@ -62,6 +67,10 @@ export default function VacationsPage() {
   useEffect(() => {
     getVacationsAction();
   }, []);
+
+  useEffect(() => {
+    socket = io(IO_CONNECTION);
+  }, [IO_CONNECTION]);
 
   const showModal = () => {
     showFormModal({
