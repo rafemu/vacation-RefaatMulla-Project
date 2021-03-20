@@ -19,7 +19,7 @@ const io = require("socket.io")(httpServer, {
   },
 });
 
-require("./socket/streams")(io);
+require("./socket/vacation-socket")(io);
 
 const logger = require("./logger");
 

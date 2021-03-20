@@ -11,7 +11,6 @@ export default async function getVacationsAction(userId?: number) {
     dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_SUCCESS, payload: result });
   } catch (error) {
     dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_ERROR, payload: error });
-    console.log(error);
     dispatch({ type: ACTIONS.LOGOUT.LOGOUT_SUCCESS });
   }
 }

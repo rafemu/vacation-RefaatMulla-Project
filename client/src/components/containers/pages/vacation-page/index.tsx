@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { IVacation } from "../../../../interfaces";
 import getVacationsAction from "../../../../store/async-actions/vacations";
@@ -22,7 +22,7 @@ import { IO_CONNECTION } from "../../../../config";
 
 import { io } from "socket.io-client";
 
-let socket;
+let socket: any;
 const MySwal = withReactContent(Swal);
 const showFormModal = (values: any) => {
   return new Promise((resolve, reject) => {
@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function VacationsPage() {
   const classes = useStyles();
   const isAdmin = getIsAdmin();
+  const [reload, setReload] = useState(false);
 
   const vacations: IVacation[] = useSelector(
     (store: IState) => store.vacations
@@ -72,6 +73,17 @@ export default function VacationsPage() {
     socket = io(IO_CONNECTION);
   }, [IO_CONNECTION]);
 
+  useEffect(() => {
+    console.log(reload);
+
+    socket.on("reloadPage", () => {
+      console.log("reloadPage");
+      getVacationsAction();
+      console.log("reloadPage");
+    });
+    console.log("reload reloaded");
+  }, [reload]);
+
   const showModal = () => {
     showFormModal({
       destination: "",
@@ -82,8 +94,13 @@ export default function VacationsPage() {
       file: "",
     })
       .then((values) => {
-        console.log(values);
-        const addVacation = addNewVacationsService(values);
+        const addVacation = addNewVacationsService(values).then((done) => {
+          console.log(reload);
+
+          setReload(true);
+          console.log(reload);
+          socket.emit("reload", {});
+        });
       })
       .catch((e) => {
         console.log(e);
