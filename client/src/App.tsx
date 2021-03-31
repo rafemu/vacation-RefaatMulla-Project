@@ -1,34 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { history } from "./_helprs/history";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import VacationsPage from "./components/containers/pages/vacation-page";
 import { LoginPage } from "./components/containers/pages/login-page";
 import AdminPage from "./components/containers/pages/admin-page";
 import NavBarApp from "./components/ui-component/nav-bar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { IState } from "./store/reducers/mainReducers";
+import ACTIONS from "./store/actions";
 
 function App() {
   const isLogedIn = useSelector(
     (state: IState) => state.currentUser.isLoggedIn
   );
+  const alert = useSelector((state: IState) => state.message);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    history.listen((location, action) => {
+      // clear alert on location change
+      dispatch({ type: ACTIONS.ALERT_MESSAGE.CLEAR, payload: "" });
+    });
+  }, []);
+  if (isLogedIn === false) {
+    history.push("/");
+  }
 
   return (
-    <Router>
+    <Router history={history}>
       <div>
         {isLogedIn && <NavBarApp />}
-
+        {alert && <div>{alert}</div>}
         <div>
           <Switch>
-            {/* <Route key="CreateAccount" path="/CreateAccount">
-                <Register />
-              </Route> */}
-            {/* {!isLogedIn && <Redirect to="/" />} */}
             <Route key="admin" path="/admin">
               <div className="vacationCard">
                 <AdminPage />
@@ -44,6 +51,8 @@ function App() {
                 <LoginPage />
               </div>
             </Route>
+
+            <Redirect from="*" to="/" />
           </Switch>
         </div>
       </div>

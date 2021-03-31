@@ -36,7 +36,7 @@ router.post(
         res.cookie("auth", token);
 
         return res.json({
-          message: `Hello ${result.firstName} , login success`,
+          message: `redirect`,
           id: result.id,
           username: result.firstName,
           role: result.role,

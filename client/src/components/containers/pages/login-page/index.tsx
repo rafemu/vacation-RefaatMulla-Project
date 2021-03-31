@@ -7,7 +7,8 @@ import TextField from "@material-ui/core/TextField/TextField";
 import { LoginAction } from "../../../../store/async-actions/authUser";
 import { useSelector } from "react-redux";
 import { IState } from "../../../../store/reducers/mainReducers";
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { Alert, AlertTitle } from "@material-ui/lab";
 
 export function LoginPage() {
   const userFeild: any = {
@@ -16,8 +17,8 @@ export function LoginPage() {
   };
   const history = useHistory();
 
+  const alert = useSelector((state: IState) => state.message);
   const [loginDetails, setChangePasswordDetails] = useState(userFeild);
-  const [errMsg, seterrMsg] = useState("");
   const currentUser = useSelector((state: IState) => state.currentUser);
 
   function onChangePassword(key: string, value: string) {
@@ -25,15 +26,18 @@ export function LoginPage() {
   }
 
   useEffect(() => {
-    console.log(currentUser);
     if (currentUser.isLoggedIn == true) history.push("/home");
   }, []);
 
   async function sendLoginReuqest() {
     if (!loginDetails.userName || !loginDetails.password) return;
     const result = await LoginAction(loginDetails);
-    if (result) history.push("/home");
-    window.location.reload();
+    if (!result) return;
+    const { accessToken, message } = result;
+    if (message === "redirect" && accessToken) {
+      window.location.reload();
+      history.push("/home");
+    }
   }
 
   return (
@@ -49,9 +53,16 @@ export function LoginPage() {
         <Paper>
           <form>
             <Card className={css.cardDiv}>
-              <strong>{errMsg}</strong>
               <h2>Login please</h2>
               <CardContent>
+                <div>
+                  {alert && (
+                    <Alert severity="error">
+                      <AlertTitle>Error</AlertTitle>
+                      <strong>{alert}</strong>
+                    </Alert>
+                  )}
+                </div>
                 <TextField
                   className={css.textField}
                   label="Enter your User Name"

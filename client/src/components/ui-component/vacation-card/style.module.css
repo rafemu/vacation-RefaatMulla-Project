@@ -21,3 +21,20 @@
 .title {
   width: 35vh;
 }
+
+.flightSection {
+  display: flex;
+
+  width: 100%;
+}
+
+.flightDiv {
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+}
+/* .flightIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { IVacation } from "../../../../interfaces";
-import getVacationsAction from "../../../../store/async-actions/vacations";
+import { getVacationsAction } from "../../../../store/async-actions/vacations";
 import { IState } from "../../../../store/reducers/mainReducers";
 import VacationCard from "../../../ui-component/vacation-card";
 import css from "./style.module.css";
@@ -21,6 +21,7 @@ import { addNewVacationsService } from "../../../../store/services/vacations.ser
 import { IO_CONNECTION } from "../../../../config";
 
 import { io } from "socket.io-client";
+import moment from "moment";
 
 let socket: any;
 const MySwal = withReactContent(Swal);
@@ -60,55 +61,42 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function VacationsPage() {
   const classes = useStyles();
   const isAdmin = getIsAdmin();
-  const [reload, setReload] = useState(false);
 
   const vacations: IVacation[] = useSelector(
     (store: IState) => store.vacations
   );
+
   useEffect(() => {
     getVacationsAction();
   }, []);
 
   useEffect(() => {
     socket = io(IO_CONNECTION);
-  }, [IO_CONNECTION]);
-
-  useEffect(() => {
-    console.log(reload);
-
-    socket.on("reloadPage", () => {
-      console.log("reloadPage");
-      getVacationsAction();
-      console.log("reloadPage");
+    socket.on("reloadPage", (data: any) => {
+      console.log("vacations befor reload", vacations);
+      setTimeout(() => {
+        getVacationsAction();
+      }, 500);
     });
-    console.log("reload reloaded");
-  }, [reload]);
+  }, []);
 
   const showModal = () => {
     showFormModal({
       destination: "",
       description: "",
-      startAt: new Date(),
-      endAt: new Date(),
+      startAt: moment(new Date()).format("YYYY-MM-DD"),
+      endAt: moment(new Date()).format("YYYY-MM-DD"),
       price: "",
       file: "",
     })
       .then((values) => {
         const addVacation = addNewVacationsService(values).then((done) => {
-          console.log(reload);
-
-          setReload(true);
-          console.log(reload);
           socket.emit("reload", {});
+          Swal.fire("Added!", "Your Vacation has been added.", "success");
         });
       })
       .catch((e) => {
         console.log(e);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
       });
   };
 
@@ -134,7 +122,7 @@ export default function VacationsPage() {
 
       <div className={css.vacationCardView}>
         {vacations.map((vacation: IVacation) => (
-          <VacationCard key={vacation.id} {...vacation} />
+          <VacationCard key={vacation.id} {...vacation} socket={socket} />
         ))}
       </div>
     </div>

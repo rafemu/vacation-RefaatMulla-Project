@@ -20,8 +20,8 @@ import { red } from "@material-ui/core/colors";
 
 import { getPayload } from "../../../store/services/token.service";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import { Link, Redirect } from "react-router-dom";
-import { logOut } from "../../../store/async-actions/authUser";
+import { Link, Redirect, useHistory } from "react-router-dom";
+import { LogOut } from "../../../store/async-actions/authUser";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
@@ -104,6 +104,10 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "inline",
       margin: "10px 20px",
     },
+    HomeLink: {
+      color: theme.palette.common.white,
+      textDecoration: "none",
+    },
   })
 );
 const StyledMenu = withStyles({
@@ -137,13 +141,12 @@ const StyledMenuItem = withStyles((theme) => ({
 }))(MenuItem);
 
 export default function NavBarApp() {
+  const history = useHistory();
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const currentUserDetails = getPayload();
-  console.log(currentUserDetails);
-  if (currentUserDetails == undefined) {
-    return <Redirect to="/login" />;
-  }
+
   const isAdmin = getIsAdmin();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -155,8 +158,8 @@ export default function NavBarApp() {
   };
 
   function handelLogOut() {
-    const result = logOut();
-    return <Redirect to="/login" />;
+    const result = LogOut();
+    history.push("/");
   }
 
   return (
@@ -164,7 +167,9 @@ export default function NavBarApp() {
       <AppBar className={classes.appBarS} position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Vacation Refaat App
+            <Link className={classes.HomeLink} to="/">
+              Vacation Refaat App
+            </Link>
           </Typography>
 
           <div className={classes.search}>

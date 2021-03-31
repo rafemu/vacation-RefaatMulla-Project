@@ -29,6 +29,7 @@ const validationsObj = {
     return next();
   },
   changePassword: (req, res, next) => {
+    console.log(req.body);
     const { error } = changePasswordSchema.validate(req.body);
     if (error) {
       console.log(error.details);

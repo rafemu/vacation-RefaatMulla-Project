@@ -6,8 +6,14 @@ const {
   createVacation,
   insertPhotoToDB,
   followVacation,
+  isFollowAlreadyExist,
+  unFollowVacation,
   editVacation,
   getVacations,
+  deleteVacationById,
+  getVacationById,
+  _deleteImageFromStorage,
+  updatePhotoToDB,
 } = require("../controllers/vacation");
 const getValidationFunction = require("./../validations/vacation.validation");
 const moment = require("moment");
@@ -17,9 +23,9 @@ const currentTime = moment().utc();
 
 router.use(verifyToken);
 
-router.get("/", async (req, res, nexr) => {
+router.get("/", async (req, res, next) => {
   try {
-    const result = await getVacations();
+    const result = await getVacations(req.user.id);
     if (!result) throw new Error("some thing went wrong");
     logger.info(
       `get vacation from server done by - userName: ${req.user.userName} - ${currentTime}`
@@ -59,17 +65,23 @@ router.post(
 );
 
 router.put(
-  `/:vacationId`,
+  "/:vacationId",
   isAdmin,
   upload,
   getValidationFunction("createVacation"),
   async (req, res, next) => {
     try {
-      if (!req.file) res.send("No files !");
+      // if (!req.file) res.send("No files !");
       const { vacationId } = req.params;
+      const getOldImagePath = await getVacationById(vacationId);
       const result = await editVacation(req.body, vacationId);
       if (!result) throw new Error("some thing went wrong");
-      const insertImages = await insertPhotoToDB(req.file.path, result);
+      if (req.file.path == !undefined)
+        await _deleteImageFromStorage(getOldImagePath.imagePath);
+
+      const getImgPath =
+        req.file.path === undefined ? getOldImagePath.imagePath : req.file.path;
+      const insertImages = await updatePhotoToDB(getImgPath, vacationId);
       logger.info(
         ` vacation has been updated  By - userName: ${req.user.userName} - ${currentTime}`
       );
@@ -84,34 +96,41 @@ router.put(
 );
 
 router.post("/follow", async (req, res, next) => {
-  const { userId, vacationId } = req.body;
+  const { vacationId } = req.body;
+  const userId = req.user.id;
+
   try {
     if (!userId || !vacationId) res.status(400).send("error");
-    const result = await followVacation(userId, vacationId);
-    if (!result) throw new Error("something went wrong");
-    res.status(200).json(`you have followed vacationId ${vacationId}`);
-    logger.info(`${userId} has followed vacationId ${vacationId}`);
+    const isExist = await isFollowAlreadyExist(vacationId, userId);
+    if (isExist) {
+      const unFollow = await unFollowVacation(vacationId, userId);
+      res.status(200).json(`you have un-followed vacationId ${vacationId}`);
+      logger.info(`${userId} has un-followed vacationId ${vacationId}`);
+    } else {
+      const result = await followVacation(userId, vacationId);
+      if (!result) throw new Error("something went wrong");
+      res.status(200).json(`you have followed vacationId ${vacationId}`);
+      logger.info(`${userId} has followed vacationId ${vacationId}`);
+    }
   } catch (ex) {
     console.log(ex.message);
     return next({ message: ex.message, status: 400 });
   }
 });
 
-// router.delete("/element/:id", function(req, res) {
-//   Image.findByIdAndRemove(req.params.id, function(err) {
-//     if(err) {
-//       //Error Handling
-//     } else {
-
-// fs.unlink(path+req.file.filename, (err) => {
-//         if (err) {
-//             console.log("failed to delete local image:"+err);
-//         } else {
-//             console.log('successfully deleted local image');
-//         }
-// });
-//     }
-//   });
-// });
+router.delete("/:vacationId", isAdmin, async (req, res, next) => {
+  const vacationId = req.params.vacationId;
+  try {
+    const checkIfVacationExist = await getVacationById(vacationId);
+    if (!checkIfVacationExist) throw new Error("Invalid Vacation");
+    const result = await deleteVacationById(vacationId);
+    if (!result) throw new Error("error in deleteing vacation");
+    const deleteImage = _deleteImageFromStorage(checkIfVacationExist.imagePath);
+    res.status(200).json(`you have deleted vacationId ${vacationId}`);
+    logger.info(`${req.user.userName} has deleted vacationId ${vacationId}`);
+  } catch (ex) {
+    return next({ message: ex.message, status: 400 });
+  }
+});
 
 module.exports = router;

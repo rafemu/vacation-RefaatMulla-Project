@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useFormik } from "formik";
+import React from "react";
+import { Formik, Form } from "formik";
 
 import { Input, TextField } from "@material-ui/core";
 import {
@@ -8,10 +7,12 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import moment from "moment";
+import { BASE_URL } from "../../../config";
 
 export function ModalForm(props: any) {
   const { title, values, onChange, onSubmit, onCancel } = props;
-
+  const imagePath = values.file?.split("/")[1];
   return (
     <div>
       <h3>{title}</h3>
@@ -46,46 +47,40 @@ export function ModalForm(props: any) {
                 </div>
 
                 <div>
-                  <input
+                  <KeyboardDatePicker
+                    margin="normal"
+                    fullWidth
+                    id="date-picker-dialog"
+                    label="startAt"
+                    format="MM/dd/yyyy"
                     value={values.startAt}
-                    onChange={handleChange}
-                    type="Date"
-                    name="startAt"
-                    placeholder="startAt"
+                    onChange={(date) => {
+                      console.log(date);
+                      console.log(moment(date).format("YYYY-MM-DD"));
+                      setFieldValue(
+                        "startAt",
+                        moment(date).format("YYYY-MM-DD")
+                      );
+                    }}
+                    KeyboardButtonProps={{
+                      "aria-label": "change date",
+                    }}
                   />
-                  {/* <KeyboardDatePicker
-                  margin="normal"
-                  fullWidth
-                  label="from"
-                  format="MM/dd/yyyy"
-                  name="startAt"
-                  type="Date"
-                  value={values.startAt}
-                  onChange={handleChange}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                />
-
-                <KeyboardDatePicker
-                  id="date-picker-dialog"
-                  label="Date picker dialog"
-                  inputVariant="outlined"
-                  format="MM/dd/yyyy"
-                  value={values.startAt}
-                  onChange={handleChange}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date",
-                  }}
-                /> */}
                 </div>
                 <div>
-                  <input
+                  <KeyboardDatePicker
+                    margin="normal"
+                    fullWidth
+                    id="date-picker-dialog"
+                    label="endAt"
+                    format="MM/dd/yyyy"
                     value={values.endAt}
-                    onChange={handleChange}
-                    type="Date"
-                    name="endAt"
-                    placeholder="endAt"
+                    onChange={(date) =>
+                      setFieldValue("endAt", moment(date).format("YYYY-MM-DD"))
+                    }
+                    KeyboardButtonProps={{
+                      "aria-label": "change date",
+                    }}
                   />
                 </div>
                 <div>
@@ -98,16 +93,14 @@ export function ModalForm(props: any) {
                     onChange={handleChange}
                   />
                 </div>
-
                 <div>
-                  {/* <Input
-                    fullWidth
-                    type="file"
-                    name="file"
-                    onChange={(event) => {
-                      //setFieldValue("file", event.target.files[0]);
-                    }}
-                  /> */}
+                  <img
+                    width="100%"
+                    // className={classes.media}
+                    src={BASE_URL + "/" + imagePath}
+                  />
+                </div>
+                <div>
                   <Input
                     type="file"
                     name="file"

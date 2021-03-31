@@ -1,5 +1,3 @@
-import { logOut } from "../async-actions/authUser";
-
 function setToken(token: string) {
   localStorage.setItem("VacationApp", token);
 }
@@ -21,7 +19,8 @@ function getPayload() {
       const checkIfExpired = isExpired(checkExpirationDate);
       if (checkIfExpired) {
         localStorage.removeItem("VacationApp");
-        throw new Error("token has beemn expaired");
+        window.location.href = "/";
+        throw new Error("token has been expaired");
       }
       return payload;
     } catch (error) {

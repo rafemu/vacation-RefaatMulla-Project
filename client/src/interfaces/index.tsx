@@ -8,6 +8,7 @@ export interface IVacation {
   createdAt: Date;
   updatedAt: Date;
   image?: string;
+  numberOfFollowers?: number;
 }
 
 export interface IUser {

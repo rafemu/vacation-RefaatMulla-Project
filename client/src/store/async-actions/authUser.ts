@@ -9,7 +9,6 @@ const { dispatch } = store;
 async function LoginAction(userDetails: IUser) {
   try {
     const result = await loginService(userDetails);
-    console.log(result);
     if (!result.accessToken) throw new Error(result.message);
     setToken(result.accessToken);
     dispatch({
@@ -20,20 +19,16 @@ async function LoginAction(userDetails: IUser) {
   } catch (ex) {
     console.log(ex);
     dispatch({
-      type: ACTIONS.LOGIN.LOGIN_FAIL,
-      payload: "Something went wrong",
-    });
-    dispatch({
-      type: ACTIONS.MESSAGE.SET_MESSAGE,
-      payload: ex,
+      type: ACTIONS.ALERT_MESSAGE.ALERT_ERROR,
+      payload: ex.toString(),
     });
   }
 }
 
-function logOut() {
+function LogOut() {
   localStorage.removeItem("VacationApp");
   dispatch({
     type: ACTIONS.LOGOUT.LOGOUT_SUCCESS,
   });
 }
-export { LoginAction, logOut };
+export { LoginAction, LogOut };
