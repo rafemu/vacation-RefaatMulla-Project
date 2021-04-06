@@ -1,6 +1,5 @@
 import axios from "axios";
 import { BASE_URL } from "../../config";
-import authHeader from "./auth-header";
 
 const API_URL = `${BASE_URL}/vacation`;
 async function getVacationsService() {
@@ -48,7 +47,6 @@ async function editeVacationsService(vacationId: number, vacationDetails: any) {
   formData.append("endAt", endAt);
   formData.append("price", price);
   formData.append("file", file);
-  // console.log(`${API_URL}` + "/" + vacationId);
   const { data } = await axios.put(`${API_URL}` + "/" + vacationId, formData, {
     headers: {
       "x-access-token": localStorage.getItem("VacationApp"),

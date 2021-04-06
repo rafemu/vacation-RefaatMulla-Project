@@ -15,3 +15,10 @@ export interface IUser {
   userName: string;
   password: string;
 }
+
+export interface IUserRegister {
+  userName: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+}

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { IVacation } from "../../../../interfaces";
 import { getVacationsAction } from "../../../../store/async-actions/vacations";
-import { IState } from "../../../../store/reducers/mainReducers";
 import VacationCard from "../../../ui-component/vacation-card";
 import css from "./style.module.css";
 import Swal from "sweetalert2";
@@ -22,6 +21,7 @@ import { IO_CONNECTION } from "../../../../config";
 
 import { io } from "socket.io-client";
 import moment from "moment";
+import { IAllState } from "../../../../App";
 
 let socket: any;
 const MySwal = withReactContent(Swal);
@@ -63,7 +63,7 @@ export default function VacationsPage() {
   const isAdmin = getIsAdmin();
 
   const vacations: IVacation[] = useSelector(
-    (store: IState) => store.vacations
+    (store: IAllState) => store.mainReducer.vacations
   );
 
   useEffect(() => {
@@ -73,7 +73,6 @@ export default function VacationsPage() {
   useEffect(() => {
     socket = io(IO_CONNECTION);
     socket.on("reloadPage", (data: any) => {
-      console.log("vacations befor reload", vacations);
       setTimeout(() => {
         getVacationsAction();
       }, 500);

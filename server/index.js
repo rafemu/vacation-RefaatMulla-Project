@@ -5,13 +5,6 @@ const cors = require("cors");
 const api = express();
 api.use(express.json());
 api.use(cors());
-
-// const server = require("http").createServer(api, {
-//   cors: {
-//     origin: "*",
-//   },
-// });
-//const io = require("socket.io")();
 const httpServer = require("http").createServer(api);
 const io = require("socket.io")(httpServer, {
   cors: {
@@ -53,9 +46,6 @@ function validateEnvParams() {
 }
 
 validateEnvParams();
-//// End Validate Env Params
-
-// api.use(fileUpload());
 
 api.use(express.static("images"));
 
@@ -77,7 +67,6 @@ api.use(express.static("images"));
 
 // parse requests of content-type - application/x-www-form-urlencoded
 api.use(bodyParser.urlencoded({ extended: false }));
-//api.use(forms.array());
 
 api.use(bodyParser.json());
 ///check Api connection
@@ -90,7 +79,7 @@ api.use("/auth", login);
 api.use("/vacation", vacation);
 
 api.use((error, req, res, next) => {
-  console.log(error);
+  console.log("error handler", error);
   const status = error.status || 500;
   res.status(status).json(error.message);
 });

@@ -3,15 +3,15 @@ import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 import { IVacation } from "../../../../interfaces";
 import { getVacationsAction } from "../../../../store/async-actions/vacations";
-import { IState } from "../../../../store/reducers/mainReducers";
 import { IO_CONNECTION } from "../../../../config";
 
 import { io } from "socket.io-client";
+import { IAllState } from "../../../../App";
 let socket: any;
 
 export default function AdminPage() {
   const vacations: IVacation[] = useSelector(
-    (store: IState) => store.vacations
+    (store: IAllState) => store.mainReducer.vacations
   );
 
   const getLabels = vacations.map((v) => {
@@ -80,7 +80,6 @@ export default function AdminPage() {
   };
   return (
     <div>
-      <h2>Admin page</h2>
       <div>
         <h2>Vacations v. Followers </h2>
         <Bar data={data} options={options} />

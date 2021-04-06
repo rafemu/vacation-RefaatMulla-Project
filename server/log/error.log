@@ -240,3 +240,20 @@
 {"message":"Tue Mar 30 2021 22:49:59 GMT+0000 - edit vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-31T07:11:22.921Z"}
 {"message":"Tue Mar 30 2021 22:49:59 GMT+0000 - edit vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-03-31T07:11:37.339Z"}
 {"message":"Wed Mar 31 2021 08:45:06 GMT+0000 - get vacations Failed - Too many connections ","level":"error","timestamp":"2021-03-31T10:55:00.539Z"}
+{"message":"Sun Apr 04 2021 14:31:41 GMT+0000 - Registration Failed - User aya is already exist ","level":"error","timestamp":"2021-04-04T14:31:44.643Z"}
+{"message":"Sun Apr 04 2021 14:31:41 GMT+0000 - Registration Failed - User aya is already exist ","level":"error","timestamp":"2021-04-04T14:32:59.142Z"}
+{"message":"Sun Apr 04 2021 14:33:05 GMT+0000 - Registration Failed - User aya is already exist ","level":"error","timestamp":"2021-04-04T14:33:13.790Z"}
+{"message":"Sun Apr 04 2021 14:33:05 GMT+0000 - Registration Failed - User aya is already exist ","level":"error","timestamp":"2021-04-04T14:34:08.895Z"}
+{"message":"Sun Apr 04 2021 14:40:13 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:40:23.608Z"}
+{"message":"Sun Apr 04 2021 14:40:50 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:40:53.658Z"}
+{"message":"Sun Apr 04 2021 14:40:50 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:41:07.418Z"}
+{"message":"Sun Apr 04 2021 14:41:45 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:41:46.989Z"}
+{"message":"Sun Apr 04 2021 14:41:45 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:41:58.075Z"}
+{"message":"Sun Apr 04 2021 14:41:45 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:42:27.865Z"}
+{"message":"Sun Apr 04 2021 14:41:45 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:42:39.355Z"}
+{"message":"Sun Apr 04 2021 14:41:45 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:43:46.005Z"}
+{"message":"Sun Apr 04 2021 14:50:40 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:50:41.685Z"}
+{"message":"Sun Apr 04 2021 14:51:08 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:51:13.730Z"}
+{"message":"Sun Apr 04 2021 14:51:08 GMT+0000 - Registration Failed - User neel is already exist ","level":"error","timestamp":"2021-04-04T14:52:33.469Z"}
+{"message":"Sun Apr 04 2021 14:51:09 GMT+0000 - edit vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-04-04T16:01:46.308Z"}
+{"message":"Sun Apr 04 2021 19:44:49 GMT+0000 - edit vacation Failed - Cannot read property 'path' of undefined ","level":"error","timestamp":"2021-04-04T19:46:45.931Z"}

@@ -5,7 +5,6 @@ const { isUserRegistered } = require("../controllers/users");
 async function signJWT(data) {
   return new Promise((resolve, reject) => {
     jwt.sign(
-      //{ exp: Date.now() / 1000 + 60, data },
       { exp: Math.floor(Date.now() / 1000) + 60 * 60 * 8, data },
       authSec.secret,
       function (err, token) {

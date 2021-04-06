@@ -10,11 +10,10 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red, deepOrange } from "@material-ui/core/colors";
+import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import css from "./style.module.css";
-import { IVacation } from "../../../interfaces";
 import moment from "moment";
 import { BASE_URL } from "../../../config";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -33,7 +32,6 @@ import { getPayload } from "../../../store/services/token.service";
 import { FlightLand, FlightTakeoff } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
 
-let socket: any;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -122,20 +120,18 @@ export default function VacationCard(props: any) {
     const followers = props.followerUsers;
     const splitFollowers = followers.split(",");
     const isFollow = splitFollowers.find((f: any) => {
-      return f == currentUser.data.id;
+      return Number(f) === currentUser.data.id;
     });
-    // console.log("isFollow", isFollow, "currentUser", currentUser.data.id);
-    currentUser.data.id == isFollow
+    currentUser.data.id === Number(isFollow)
       ? setIsFollowed(true)
       : setIsFollowed(false);
-    console.log("new props", isFollowed);
   }, [props]);
 
-  const favIcon = isFollowed ? (
-    <FavoriteIcon className={classes.isfollowed} />
-  ) : (
-    <FavoriteIcon className={classes.follow} />
-  );
+  // const favIcon = isFollowed ? (
+  //   <FavoriteIcon className={classes.isfollowed} />
+  // ) : (
+  //   <FavoriteIcon className={classes.follow} />
+  // );
 
   const handelFollowVacation = () => {
     const follow = followVacationByIdAction(props.id);
@@ -174,12 +170,10 @@ export default function VacationCard(props: any) {
       file: props.image,
     })
       .then((values) => {
-        const editVacation = editVacationAction(Number(props.id), values).then(
-          (done) => {
-            props.socket.emit("reload", {});
-            Swal.fire("Edited!", "Your Vacation has been Edited.", "success");
-          }
-        );
+        editVacationAction(Number(props.id), values).then((done) => {
+          props.socket.emit("reload", {});
+          Swal.fire("Edited!", "Your Vacation has been Edited.", "success");
+        });
       })
       .catch((e) => {
         console.log(e);
@@ -188,6 +182,10 @@ export default function VacationCard(props: any) {
 
   const imagePath = props.image?.split("/")[1];
 
+  const timeAgo = (time: Date) => {
+    // moment.locale('ar-eg');
+    return moment(time).fromNow();
+  };
   const getFirstLatterOfdes = props.destination.charAt(0).toLocaleUpperCase();
 
   return (
@@ -239,7 +237,7 @@ export default function VacationCard(props: any) {
             </div>
           }
           title={props.destination}
-          subheader={moment(props.createdAt).format("YYYY-MMM-DD")}
+          subheader={timeAgo(props.createdAt)}
         />
 
         <CardMedia

@@ -8,9 +8,33 @@ const createVacationSchema = Joi.object().keys({
   file: Joi.optional(),
 });
 
+const followSchema = Joi.object().keys({
+  vacationId: Joi.number().required().min(1),
+});
+
+const deleteSchema = Joi.object().keys({
+  vacationId: Joi.number().required().min(1),
+});
+
 const validationsObj = {
   createVacation: (req, res, next) => {
     const { error } = createVacationSchema.validate(req.body);
+    if (error) {
+      console.log(error.details);
+      return next(error.details);
+    }
+    return next();
+  },
+  followSchema: (req, res, next) => {
+    const { error } = followSchema.validate(req.body);
+    if (error) {
+      console.log(error.details);
+      return next(error.details);
+    }
+    return next();
+  },
+  deleteSchema: (req, res, next) => {
+    const { error } = deleteSchema.validate(req.params);
     if (error) {
       console.log(error.details);
       return next(error.details);

@@ -9,11 +9,29 @@ import {
 
 const { dispatch } = store;
 
-async function getVacationsAction(userId?: number) {
+async function getVacationsAction(searchValue?: string) {
   try {
     const result = await getVacationsService();
-    console.log("result", result);
-    dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_SUCCESS, payload: result });
+    if (searchValue) {
+      if (typeof searchValue !== "string") return;
+      const filterR = result.find((vacation: any) => {
+        return vacation.destination
+          .toLowerCase()
+          .includes(searchValue.toLocaleLowerCase());
+      });
+      if (!filterR) return;
+      dispatch({
+        type: ACTIONS.VACATIONS.GET_VACATION_SUCCESS,
+        payload: Object.values({ filterR }),
+      });
+      console.log(Object.values({ filterR }));
+    } else {
+      dispatch({
+        type: ACTIONS.VACATIONS.GET_VACATION_SUCCESS,
+        payload: result,
+      });
+    }
+    console.log(result);
   } catch (error) {
     dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_ERROR, payload: error });
     dispatch({ type: ACTIONS.LOGOUT.LOGOUT_SUCCESS });
@@ -29,7 +47,6 @@ async function deleteVacationByIdAction(vacationId: number) {
 async function editVacationAction(vacationId: number, vacationDetails: any) {
   try {
     const result = await editeVacationsService(vacationId, vacationDetails);
-    console.log("result", result);
     //  dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_SUCCESS, payload: result });
   } catch (error) {
     // dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_ERROR, payload: error });

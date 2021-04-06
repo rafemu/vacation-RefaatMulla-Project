@@ -43,7 +43,6 @@ router.post(
           accessToken: token,
         });
       }
-      //return res.json({ message: `Hello ${result.firstName} , login success` });
     } catch (error) {
       logger.error(`${currentTime} - Login Failed - ${error.message} `);
       return res.json({
@@ -70,44 +69,9 @@ router.post(
         );
         return res.json({ message: `Registration completed` });
       } else throw new Error("Registration Failed");
-    } catch (ex) {
+    } catch (error) {
       logger.error(`${currentTime} - Registration Failed - ${error.message} `);
-      return next({ message: ex.message, status: 400 });
-    }
-  }
-);
-
-const _changePasswordPath = "changePassword";
-router.post(
-  `/${_changePasswordPath}`,
-  getValidationFunction(_changePasswordPath),
-  async (req, res, next) => {
-    const { userName, password, newPassword, confirmNewPassword } = req.body;
-    try {
-      _validateConfirmPassword(newPassword, confirmNewPassword);
-
-      const result = await isUserRegistered(userName);
-      if (!result) res.status(400).json(`Wrong Credentials`);
-      const passwordIsValid = bcrypt.compareSync(password, result.password);
-      if (!passwordIsValid) res.status(400).json(`Wrong password`);
-      const changePassResult = await changePassword(result.id, newPassword);
-      if (changePassResult) {
-        logger.info(
-          `${currentTime} - Password has been changed for user ${result.userName} `
-        );
-        return res.json({ message: "password has changed!!!" });
-      } else throw new Error(`[password] was not updated`);
-    } catch (ex) {
-      return next({ message: ex.message, status: 400 });
-    }
-
-    function _validateConfirmPassword() {
-      if (typeof newPassword !== "string") {
-        console.log("newPassword type wrong");
-        return;
-      }
-      if (newPassword !== confirmNewPassword)
-        res.status(400).json(`confirm password error`);
+      return next({ message: error.message, status: 500 });
     }
   }
 );

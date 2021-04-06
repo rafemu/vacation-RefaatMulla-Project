@@ -71,7 +71,6 @@ router.put(
   getValidationFunction("createVacation"),
   async (req, res, next) => {
     try {
-      // if (!req.file) res.send("No files !");
       const { vacationId } = req.params;
       const getOldImagePath = await getVacationById(vacationId);
       const result = await editVacation(req.body, vacationId);
@@ -95,42 +94,53 @@ router.put(
   }
 );
 
-router.post("/follow", async (req, res, next) => {
-  const { vacationId } = req.body;
-  const userId = req.user.id;
+router.post(
+  "/follow",
+  getValidationFunction("followSchema"),
+  async (req, res, next) => {
+    const { vacationId } = req.body;
+    const userId = req.user.id;
 
-  try {
-    if (!userId || !vacationId) res.status(400).send("error");
-    const isExist = await isFollowAlreadyExist(vacationId, userId);
-    if (isExist) {
-      const unFollow = await unFollowVacation(vacationId, userId);
-      res.status(200).json(`you have un-followed vacationId ${vacationId}`);
-      logger.info(`${userId} has un-followed vacationId ${vacationId}`);
-    } else {
-      const result = await followVacation(userId, vacationId);
-      if (!result) throw new Error("something went wrong");
-      res.status(200).json(`you have followed vacationId ${vacationId}`);
-      logger.info(`${userId} has followed vacationId ${vacationId}`);
+    try {
+      if (!userId || !vacationId) res.status(400).send("error");
+      const isExist = await isFollowAlreadyExist(vacationId, userId);
+      if (isExist) {
+        const unFollow = await unFollowVacation(vacationId, userId);
+        res.status(200).json(`you have un-followed vacationId ${vacationId}`);
+        logger.info(`${userId} has un-followed vacationId ${vacationId}`);
+      } else {
+        const result = await followVacation(userId, vacationId);
+        if (!result) throw new Error("something went wrong");
+        res.status(200).json(`you have followed vacationId ${vacationId}`);
+        logger.info(`${userId} has followed vacationId ${vacationId}`);
+      }
+    } catch (ex) {
+      console.log(ex.message);
+      return next({ message: ex.message, status: 400 });
     }
-  } catch (ex) {
-    console.log(ex.message);
-    return next({ message: ex.message, status: 400 });
   }
-});
+);
 
-router.delete("/:vacationId", isAdmin, async (req, res, next) => {
-  const vacationId = req.params.vacationId;
-  try {
-    const checkIfVacationExist = await getVacationById(vacationId);
-    if (!checkIfVacationExist) throw new Error("Invalid Vacation");
-    const result = await deleteVacationById(vacationId);
-    if (!result) throw new Error("error in deleteing vacation");
-    const deleteImage = _deleteImageFromStorage(checkIfVacationExist.imagePath);
-    res.status(200).json(`you have deleted vacationId ${vacationId}`);
-    logger.info(`${req.user.userName} has deleted vacationId ${vacationId}`);
-  } catch (ex) {
-    return next({ message: ex.message, status: 400 });
+router.delete(
+  "/:vacationId",
+  getValidationFunction("deleteSchema"),
+  isAdmin,
+  async (req, res, next) => {
+    const vacationId = req.params.vacationId;
+    try {
+      const checkIfVacationExist = await getVacationById(vacationId);
+      if (!checkIfVacationExist) throw new Error("Invalid Vacation");
+      const result = await deleteVacationById(vacationId);
+      if (!result) throw new Error("error in deleteing vacation");
+      const deleteImage = _deleteImageFromStorage(
+        checkIfVacationExist.imagePath
+      );
+      res.status(200).json(`you have deleted vacationId ${vacationId}`);
+      logger.info(`${req.user.userName} has deleted vacationId ${vacationId}`);
+    } catch (ex) {
+      return next({ message: ex.message, status: 400 });
+    }
   }
-});
+);
 
 module.exports = router;

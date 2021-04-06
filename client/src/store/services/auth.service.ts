@@ -1,12 +1,17 @@
 import axios from "axios";
 import { BASE_URL } from "../../config";
-import { IUser } from "../../interfaces";
-import { getPayload, getToken } from "./token.service";
+import { IUser, IUserRegister } from "../../interfaces";
+import { getPayload } from "./token.service";
 
-const API_URL = `${BASE_URL}/auth/login`;
+const API_URL = `${BASE_URL}/auth`;
 
 async function loginService(userDetails: IUser) {
-  const { data } = await axios.post(`${API_URL}`, userDetails);
+  const { data } = await axios.post(`${API_URL}/login`, userDetails);
+  return data;
+}
+
+async function registerService(userDetails: IUserRegister) {
+  const { data } = await axios.post(`${API_URL}/register`, userDetails);
   return data;
 }
 
@@ -20,4 +25,4 @@ function getIsAdmin() {
   return isAdmin;
 }
 
-export { loginService, getIsAdmin };
+export { loginService, getIsAdmin, registerService };

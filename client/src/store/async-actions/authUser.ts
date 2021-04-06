@@ -1,7 +1,7 @@
-import { IUser } from "../../interfaces";
+import { IUser, IUserRegister } from "../../interfaces";
 import ACTIONS from "../actions";
 import store from "../index";
-import { loginService } from "../services/auth.service";
+import { loginService, registerService } from "../services/auth.service";
 import { setToken } from "../services/token.service";
 
 const { dispatch } = store;
@@ -25,10 +25,30 @@ async function LoginAction(userDetails: IUser) {
   }
 }
 
+async function registerUserAction(userDetails: IUserRegister) {
+  try {
+    const result = await registerService(userDetails);
+    dispatch({
+      type: ACTIONS.REGISTER.USER_REGISTRATION_SUCCESS,
+      payload: result,
+    });
+    dispatch({
+      type: ACTIONS.ALERT_MESSAGE.ALERT_SUCCESS,
+      payload: result.message,
+    });
+    return result;
+  } catch (ex) {
+    console.log(ex);
+    dispatch({
+      type: ACTIONS.ALERT_MESSAGE.ALERT_ERROR,
+      payload: ex.toString(),
+    });
+  }
+}
 function LogOut() {
   localStorage.removeItem("VacationApp");
   dispatch({
     type: ACTIONS.LOGOUT.LOGOUT_SUCCESS,
   });
 }
-export { LoginAction, LogOut };
+export { LoginAction, registerUserAction, LogOut };

@@ -10,23 +10,24 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu, { MenuProps } from "@material-ui/core/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import { getVacationsAction } from "../../../store/async-actions/vacations";
 
 import { red } from "@material-ui/core/colors";
 
 import { getPayload } from "../../../store/services/token.service";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { LogOut } from "../../../store/async-actions/authUser";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
 import SettingsIcon from "@material-ui/icons/Settings";
 import { getIsAdmin } from "../../../store/services/auth.service";
+import Filter from "../filter";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBarS: {
@@ -158,7 +159,7 @@ export default function NavBarApp() {
   };
 
   function handelLogOut() {
-    const result = LogOut();
+    LogOut();
     history.push("/");
   }
 
@@ -176,13 +177,11 @@ export default function NavBarApp() {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
+            <Filter
+              onChange={(value: string) => {
+                getVacationsAction(value);
               }}
-              inputProps={{ "aria-label": "search" }}
+              classes={classes}
             />
           </div>
           <div className={classes.grow} />

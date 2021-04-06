@@ -1,6 +1,6 @@
 import { IVacation } from "../../interfaces";
 import ACTIONS from "../actions";
-import { getToken, getPayload } from "../services/token.service";
+import { getToken } from "../services/token.service";
 
 export interface IState {
   vacations: Array<IVacation>;
@@ -17,7 +17,6 @@ const initialState: IState = {
     : { isLoggedIn: false, user: {} },
 };
 
-console.log(initialState);
 function mainReducer(state = initialState, action: any) {
   switch (action.type) {
     case ACTIONS.VACATIONS.GET_VACATION_SUCCESS: {
