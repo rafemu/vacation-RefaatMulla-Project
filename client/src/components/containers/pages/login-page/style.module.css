@@ -40,8 +40,11 @@
 }
 .cardDiv {
   padding: 50px;
+  width: 350px;
 }
-
+.alert {
+  padding-bottom: 10px;
+}
 .textField {
   padding-top: 30px;
 }

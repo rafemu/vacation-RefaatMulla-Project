@@ -15,12 +15,15 @@ async function LoginAction(userDetails: IUser) {
       type: ACTIONS.LOGIN.LOGIN_SUCCESS,
       payload: result,
     });
+    dispatch({
+      type: ACTIONS.ALERT_MESSAGE.ALERT_SUCCESS,
+      payload: "Login successfully",
+    });
     return result;
   } catch (ex) {
-    console.log(ex);
     dispatch({
       type: ACTIONS.ALERT_MESSAGE.ALERT_ERROR,
-      payload: ex.toString(),
+      payload: ex.message,
     });
   }
 }
@@ -41,7 +44,7 @@ async function registerUserAction(userDetails: IUserRegister) {
     console.log(ex);
     dispatch({
       type: ACTIONS.ALERT_MESSAGE.ALERT_ERROR,
-      payload: ex.toString(),
+      payload: ex.message,
     });
   }
 }

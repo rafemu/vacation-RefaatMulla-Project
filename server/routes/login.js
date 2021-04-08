@@ -67,7 +67,7 @@ router.post(
         logger.info(
           `currentTime: ${currentTime} ###### Register New User :${userName}`
         );
-        return res.json({ message: `Registration completed` });
+        return res.json({ message: `Registration completed`, complete: true });
       } else throw new Error("Registration Failed");
     } catch (error) {
       logger.error(`${currentTime} - Registration Failed - ${error.message} `);

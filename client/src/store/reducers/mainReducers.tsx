@@ -4,14 +4,12 @@ import { getToken } from "../services/token.service";
 
 export interface IState {
   vacations: Array<IVacation>;
-  message: string;
   currentUser: any;
 }
 
 const user = getToken();
 const initialState: IState = {
   vacations: [],
-  message: "",
   currentUser: user
     ? { isLoggedIn: true, user }
     : { isLoggedIn: false, user: {} },
@@ -37,15 +35,6 @@ function mainReducer(state = initialState, action: any) {
     case ACTIONS.LOGOUT.LOGOUT_SUCCESS: {
       return { ...state, isLoggedIn: false, currentUser: {} };
     }
-
-    case ACTIONS.ALERT_MESSAGE.ALERT_SUCCESS:
-      return { ...state, message: action.payload };
-    case ACTIONS.ALERT_MESSAGE.ALERT_ERROR:
-      return { ...state, message: action.payload };
-
-    case ACTIONS.ALERT_MESSAGE.CLEAR:
-      return { ...state, message: "" };
-
     default: {
       return state;
     }

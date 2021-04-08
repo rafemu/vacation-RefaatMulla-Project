@@ -82,7 +82,7 @@ const showFormModal = (values: any) => {
     MySwal.fire({
       html: (
         <ModalForm
-          title={"Edit vacation!"}
+          title={"Edit"}
           values={values}
           onSubmit={(values: any) => {
             resolve(values);

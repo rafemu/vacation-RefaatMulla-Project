@@ -1,21 +1,21 @@
 import ACTIONS from "../actions";
 
 export interface IAlertState {
-  type: string;
+  type: null;
   message: string;
 }
 
 const initialState: IAlertState = {
-  type: "",
+  type: null,
   message: "",
 };
 
 function alertReducer(state = initialState, action: any) {
   switch (action.type) {
     case ACTIONS.ALERT_MESSAGE.ALERT_SUCCESS:
-      return { ...state, type: "alert-success", message: action.message };
+      return { ...state, type: "success", message: action.payload };
     case ACTIONS.ALERT_MESSAGE.ALERT_ERROR:
-      return { ...state, type: "alert-danger", message: action.message };
+      return { ...state, type: "error", message: action.payload };
 
     case ACTIONS.ALERT_MESSAGE.CLEAR:
       return {};

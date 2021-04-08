@@ -30,7 +30,7 @@ const showFormModal = (values: any) => {
     MySwal.fire({
       html: (
         <ModalForm
-          title={"Add new vacation!"}
+          title={"Add new "}
           values={values}
           onSubmit={(values: any) => {
             resolve(values);
@@ -86,7 +86,7 @@ export default function VacationsPage() {
       startAt: moment(new Date()).format("YYYY-MM-DD"),
       endAt: moment(new Date()).format("YYYY-MM-DD"),
       price: "",
-      file: "",
+      file: undefined,
     })
       .then((values) => {
         const addVacation = addNewVacationsService(values).then((done) => {

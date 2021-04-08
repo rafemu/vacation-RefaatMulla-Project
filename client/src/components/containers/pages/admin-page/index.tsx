@@ -7,6 +7,7 @@ import { IO_CONNECTION } from "../../../../config";
 
 import { io } from "socket.io-client";
 import { IAllState } from "../../../../App";
+
 let socket: any;
 
 export default function AdminPage() {

@@ -1,6 +1,6 @@
 const Joi = require("@hapi/joi");
 const createVacationSchema = Joi.object().keys({
-  destination: Joi.string().min(1).max(250).required(),
+  destination: Joi.string().min(3).max(250).required(),
   description: Joi.string().required(),
   startAt: Joi.string().required(),
   endAt: Joi.string().required(),
