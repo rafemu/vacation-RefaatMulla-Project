@@ -3360,3 +3360,10 @@
 {"message":"Thu Apr 08 2021 10:02:45 GMT+0000 - Login Failed - Invalid UserName!\" ","level":"error","timestamp":"2021-04-08T10:05:06.962Z"}
 {"message":"currentTime: Thu Apr 08 2021 10:02:45 GMT+0000 ###### Register New User :hamad","level":"info","timestamp":"2021-04-08T10:06:15.003Z"}
 {"message":"currentTime: Thu Apr 08 2021 10:02:45 GMT+0000 ###### Register New User :omri","level":"info","timestamp":"2021-04-08T10:06:31.171Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-08T10:18:15.702Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-08T10:21:13.746Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-08T10:22:54.295Z"}
+{"message":"tring to login - userName: aya - Thu Apr 08 2021 10:22:54 GMT+0000","level":"info","timestamp":"2021-04-08T10:25:53.759Z"}
+{"message":"currentTime: Thu Apr 08 2021 10:22:54 GMT+0000 ###### Logged User :aya  Role : User","level":"info","timestamp":"2021-04-08T10:25:53.851Z"}
+{"message":"get vacation from server done by - userName: aya - Thu Apr 08 2021 10:22:54 GMT+0000","level":"info","timestamp":"2021-04-08T10:25:55.414Z"}
+{"message":"get vacation from server done by - userName: aya - Thu Apr 08 2021 10:22:54 GMT+0000","level":"info","timestamp":"2021-04-08T10:25:55.841Z"}
