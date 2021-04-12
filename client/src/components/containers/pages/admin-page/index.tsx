@@ -21,7 +21,6 @@ export default function AdminPage() {
   const getFollowers = vacations.map((v) => {
     return v.numberOfFollowers;
   });
-  console.log(vacations);
   useEffect(() => {
     getVacationsAction();
   }, []);
@@ -82,7 +81,7 @@ export default function AdminPage() {
   return (
     <div>
       <div>
-        <h2>Vacations v. Followers </h2>
+        <h2 style={{ textAlign: "center" }}>Vacations v. Followers </h2>
         <Bar data={data} options={options} />
       </div>
     </div>

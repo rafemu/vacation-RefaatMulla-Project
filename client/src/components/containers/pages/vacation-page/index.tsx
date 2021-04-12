@@ -116,9 +116,12 @@ export default function VacationsPage() {
         </div>
       )}
       <div>
-        <h1> Vacations </h1>
+        <h1 style={{ textAlign: "center" }}> Vacations </h1>
       </div>
 
+      {vacations.length === 0 && (
+        <div style={{ textAlign: "center" }}>No Vacations </div>
+      )}
       <div className={css.vacationCardView}>
         {vacations.map((vacation: IVacation) => (
           <VacationCard key={vacation.id} {...vacation} socket={socket} />

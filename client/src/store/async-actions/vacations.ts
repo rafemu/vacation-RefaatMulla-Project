@@ -47,10 +47,8 @@ async function deleteVacationByIdAction(vacationId: number) {
 async function editVacationAction(vacationId: number, vacationDetails: any) {
   try {
     const result = await editeVacationsService(vacationId, vacationDetails);
-    //  dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_SUCCESS, payload: result });
   } catch (error) {
-    // dispatch({ type: ACTIONS.VACATIONS.GET_VACATION_ERROR, payload: error });
-    // dispatch({ type: ACTIONS.LOGOUT.LOGOUT_SUCCESS });
+    console.log(error);
   }
 }
 

@@ -26,9 +26,6 @@ FROM
   images ON vacation.id = images.vacationId
 GROUP BY id , destination , description , startAt , endAt , price , createdAt , image
 ORDER BY followerUsers = ? desc
-
-
-
 `;
 
   const [rows] = await (await connection()).execute(vacationQuery, [

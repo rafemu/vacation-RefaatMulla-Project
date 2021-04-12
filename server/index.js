@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const api = express();
 api.use(express.json());
+api.use(cors());
+const path = require("path");
 
 const httpServer = require("http").createServer(api);
 const io = require("socket.io")(httpServer, {
@@ -15,9 +17,6 @@ const io = require("socket.io")(httpServer, {
 require("./socket/vacation-socket")(io);
 
 const logger = require("./logger");
-
-const cookieParser = require("cookie-parser");
-api.use(cookieParser());
 
 //routes
 const login = require("./routes/login");
@@ -51,36 +50,30 @@ function validateEnvParams() {
 validateEnvParams();
 
 api.use(express.static("images"));
-// api.use(express.static("public"));
-const whitelist = [
-  "http://localhost:4000",
-  "http://localhost:8080",
-  "https://vacation-refaat-app.herokuapp.com",
-];
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin);
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable");
-      callback(null, true);
-    } else {
-      console.log("Origin rejected");
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
 
-api.use(cors(corsOptions));
+api.use((req, res, next) => {
+  var allowedOrigins = ["http://localhost:3000", "*"];
+  var origin = req.headers.origin;
+  if (allowedOrigins.indexOf(origin) > -1) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "x-access-token, Content-Type, Accept"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
 
-// parse requests of content-type - application/x-www-form-urlencoded
 api.use(bodyParser.urlencoded({ extended: false }));
 
 api.use(bodyParser.json());
-///check Api connection
+
 api.get("/health-check", (req, res, next) => {
   res.send("Api Vacation working ");
 });
-//end check api connection
 
 api.use("/auth", login);
 api.use("/vacation", vacation);
@@ -90,15 +83,6 @@ api.use((error, req, res, next) => {
   const status = error.status || 500;
   res.status(status).json(error.message);
 });
-
-if (process.env.NODE_ENV === "production") {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, "client/build")));
-  // Handle React routing, return all requests to React app
-  app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  });
-}
 
 httpServer.listen(process.env.PORT, () => {
   console.log(`Server is listening to Port ${process.env.PORT}`);

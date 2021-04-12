@@ -3367,3 +3367,130 @@
 {"message":"currentTime: Thu Apr 08 2021 10:22:54 GMT+0000 ###### Logged User :aya  Role : User","level":"info","timestamp":"2021-04-08T10:25:53.851Z"}
 {"message":"get vacation from server done by - userName: aya - Thu Apr 08 2021 10:22:54 GMT+0000","level":"info","timestamp":"2021-04-08T10:25:55.414Z"}
 {"message":"get vacation from server done by - userName: aya - Thu Apr 08 2021 10:22:54 GMT+0000","level":"info","timestamp":"2021-04-08T10:25:55.841Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-09T08:47:57.879Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-09T08:48:13.399Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-09T08:48:55.327Z"}
+{"message":"tring to login - userName: aya - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:48:57.359Z"}
+{"message":"currentTime: Fri Apr 09 2021 08:48:55 GMT+0000 ###### Logged User :aya  Role : User","level":"info","timestamp":"2021-04-09T08:48:57.490Z"}
+{"message":"get vacation from server done by - userName: aya - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:48:59.105Z"}
+{"message":"get vacation from server done by - userName: aya - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:00.650Z"}
+{"message":"4 has un-followed vacationId 85","level":"info","timestamp":"2021-04-09T08:49:04.818Z"}
+{"message":"get vacation from server done by - userName: aya - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:05.305Z"}
+{"message":"4 has followed vacationId 85","level":"info","timestamp":"2021-04-09T08:49:07.996Z"}
+{"message":"get vacation from server done by - userName: aya - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:08.481Z"}
+{"message":"4 has un-followed vacationId 84","level":"info","timestamp":"2021-04-09T08:49:10.092Z"}
+{"message":"get vacation from server done by - userName: aya - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:10.615Z"}
+{"message":"tring to login - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:19.929Z"}
+{"message":"currentTime: Fri Apr 09 2021 08:48:55 GMT+0000 ###### Logged User :refaat  Role : Admin","level":"info","timestamp":"2021-04-09T08:49:19.963Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:22.967Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:31.127Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:36.532Z"}
+{"message":" vacation has been updated  By - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:52.688Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:52.754Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:53.244Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:53.259Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:58.506Z"}
+{"message":"rafemu has deleted vacationId 88","level":"info","timestamp":"2021-04-09T08:49:58.526Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:58.993Z"}
+{"message":"get vacation from server done by - userName: rafemu - Fri Apr 09 2021 08:48:55 GMT+0000","level":"info","timestamp":"2021-04-09T08:49:59.008Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-10T16:01:36.866Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-10T16:02:01.834Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-10T16:02:56.090Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-10T16:07:35.605Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T18:52:37.542Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T18:53:06.677Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T18:55:25.030Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T18:55:40.052Z"}
+{"message":"tring to login - userName: rafe - Sun Apr 11 2021 18:55:39 GMT+0000","level":"info","timestamp":"2021-04-11T18:59:13.902Z"}
+{"message":"currentTime: Sun Apr 11 2021 18:55:39 GMT+0000 ###### Logged User :refaat  Role : User","level":"info","timestamp":"2021-04-11T18:59:14.035Z"}
+{"message":"tring to login - userName: rafemu - Sun Apr 11 2021 18:55:39 GMT+0000","level":"info","timestamp":"2021-04-11T18:59:48.769Z"}
+{"message":"currentTime: Sun Apr 11 2021 18:55:39 GMT+0000 ###### Logged User :refaat  Role : Admin","level":"info","timestamp":"2021-04-11T18:59:48.817Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T20:03:50.317Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:05:31.150Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:06:19.931Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:06:21.642Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:07:06.234Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:07:22.625Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:07:26.642Z"}
+{"message":"get vacation from server done by - userName: aya - Sun Apr 11 2021 21:07:26 GMT+0000","level":"info","timestamp":"2021-04-11T21:07:48.975Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:09:55.182Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:11:11.210Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:11:30.421Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:12:00.092Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-11T21:12:05.049Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-12T07:44:06.291Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-12T18:37:34.867Z"}
+{"message":"tring to login - userName: rafe - Mon Apr 12 2021 18:37:34 GMT+0000","level":"info","timestamp":"2021-04-12T18:38:13.655Z"}
+{"message":"currentTime: Mon Apr 12 2021 18:37:34 GMT+0000 ###### Logged User :refaat  Role : User","level":"info","timestamp":"2021-04-12T18:38:13.773Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-12T18:38:43.731Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:38:43 GMT+0000","level":"info","timestamp":"2021-04-12T18:38:46.543Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-12T18:38:59.665Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-12T18:39:19.107Z"}
+{"message":"Server started!","level":"info","timestamp":"2021-04-12T18:39:20.387Z"}
+{"message":"5 has un-followed vacationId 85","level":"info","timestamp":"2021-04-12T18:39:25.842Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:39:26.294Z"}
+{"message":"5 has followed vacationId 86","level":"info","timestamp":"2021-04-12T18:39:31.115Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:39:31.614Z"}
+{"message":"5 has un-followed vacationId 86","level":"info","timestamp":"2021-04-12T18:40:23.312Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:23.810Z"}
+{"message":"5 has followed vacationId 85","level":"info","timestamp":"2021-04-12T18:40:26.350Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:26.849Z"}
+{"message":"5 has followed vacationId 86","level":"info","timestamp":"2021-04-12T18:40:28.722Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:29.175Z"}
+{"message":"get vacation from server done by - userName: rafe - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:40.065Z"}
+{"message":"tring to login - userName: aya - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:53.257Z"}
+{"message":"currentTime: Mon Apr 12 2021 18:39:20 GMT+0000 ###### Logged User :aya  Role : User","level":"info","timestamp":"2021-04-12T18:40:53.312Z"}
+{"message":"get vacation from server done by - userName: aya - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:54.918Z"}
+{"message":"get vacation from server done by - userName: aya - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:40:56.000Z"}
+{"message":"tring to login - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:41:08.861Z"}
+{"message":"currentTime: Mon Apr 12 2021 18:39:20 GMT+0000 ###### Logged User :refaat  Role : Admin","level":"info","timestamp":"2021-04-12T18:41:08.890Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:41:10.528Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:41:11.502Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:41:30.969Z"}
+{"message":"currentTime: Mon Apr 12 2021 18:39:20 GMT+0000 ###### Register New User :duaa","level":"info","timestamp":"2021-04-12T18:42:08.300Z"}
+{"message":"tring to login - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:13.904Z"}
+{"message":"currentTime: Mon Apr 12 2021 18:39:20 GMT+0000 ###### Logged User :duaa  Role : User","level":"info","timestamp":"2021-04-12T18:42:13.934Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:17.003Z"}
+{"message":"16 has followed vacationId 86","level":"info","timestamp":"2021-04-12T18:42:20.364Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:20.383Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:20.857Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:20.877Z"}
+{"message":"16 has followed vacationId 84","level":"info","timestamp":"2021-04-12T18:42:35.179Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:35.181Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:35.674Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:35.683Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:43.485Z"}
+{"message":"16 has followed vacationId 85","level":"info","timestamp":"2021-04-12T18:42:43.489Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:43.980Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:43.988Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:51.617Z"}
+{"message":"16 has un-followed vacationId 86","level":"info","timestamp":"2021-04-12T18:42:51.619Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:52.113Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:52.116Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:54.580Z"}
+{"message":"16 has un-followed vacationId 84","level":"info","timestamp":"2021-04-12T18:42:54.587Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:55.080Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:55.081Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:56.352Z"}
+{"message":"16 has un-followed vacationId 85","level":"info","timestamp":"2021-04-12T18:42:56.356Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:56.855Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:42:56.859Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:05.653Z"}
+{"message":"16 has followed vacationId 84","level":"info","timestamp":"2021-04-12T18:43:05.657Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:06.149Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:06.150Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:08.099Z"}
+{"message":"16 has followed vacationId 85","level":"info","timestamp":"2021-04-12T18:43:08.104Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:08.595Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:08.596Z"}
+{"message":"16 has followed vacationId 86","level":"info","timestamp":"2021-04-12T18:43:12.182Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:12.182Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:12.678Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:43:12.679Z"}
+{"message":"get vacation from server done by - userName: rafemu - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:45:02.411Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:45:26.084Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:47:22.311Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:47:33.945Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:47:38.294Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:47:54.960Z"}
+{"message":"get vacation from server done by - userName: duaa - Mon Apr 12 2021 18:39:20 GMT+0000","level":"info","timestamp":"2021-04-12T18:48:06.385Z"}

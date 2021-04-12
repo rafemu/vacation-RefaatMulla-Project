@@ -1,0 +1,17 @@
+FROM node:14-alpine3.10
+LABEL version="1.0"
+LABEL description="vacation app from rafe mulla "
+
+WORKDIR /app
+
+
+COPY ["package.json","package-lock.json","npm-shrinkwrap.json*","./"]
+
+Run npm install && npm cach clean --force
+
+
+EXPOSE 5000
+
+COPY . /app
+ 
+CMD ["npm","start"]
