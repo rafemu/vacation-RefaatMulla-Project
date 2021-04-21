@@ -15,12 +15,17 @@ export default function AdminPage() {
     (store: IAllState) => store.mainReducer.vacations
   );
 
-  const getLabels = vacations.map((v) => {
+  const getOnlyWithFollowers = vacations.filter((v: any) => {
+    return v.numberOfFollowers != 0;
+  });
+
+  const getLabels = getOnlyWithFollowers.map((v) => {
     return v.destination;
   });
-  const getFollowers = vacations.map((v) => {
+  const getFollowers = getOnlyWithFollowers.map((v) => {
     return v.numberOfFollowers;
   });
+  console.log(getFollowers);
   useEffect(() => {
     getVacationsAction();
   }, []);
@@ -37,9 +42,7 @@ export default function AdminPage() {
     labels: getLabels,
     datasets: [
       {
-        label: "# of Followers",
         fill: false,
-        lineTension: 0.1,
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -52,7 +55,6 @@ export default function AdminPage() {
         borderColor: "rgba(75,192,192,1)",
         borderCapStyle: "butt",
         borderDash: [],
-        borderDashOffset: 0.0,
         borderJoinStyle: "miter",
         pointBorderColor: "rgba(75,192,192,1)",
         pointBackgroundColor: "#fff",
@@ -73,6 +75,8 @@ export default function AdminPage() {
         {
           ticks: {
             beginAtZero: true,
+
+            precision: 0,
           },
         },
       ],
